@@ -1,0 +1,35 @@
+ALGORITHM InsertionSort
+VAR
+    arr: ARRAY OF INTEGER
+    n, i, j, key: INTEGER
+
+BEGIN
+   
+    WRITE "Enter the number of elements:"
+    READ n
+    NEW arr[n]  
+    WRITE "Enter the elements of the array:"
+    FOR i FROM 0 TO n - 1 DO
+        READ arr[i]
+    END FOR
+
+    
+    FOR i FROM 1 TO n - 1 DO
+        key <- arr[i] 
+        j <- i - 1
+
+        WHILE j >= 0 AND arr[j] > key DO
+            arr[j + 1] <- arr[j]
+            j <- j - 1
+        END WHILE
+
+        
+        arr[j + 1] <- key
+    END FOR
+
+  
+    WRITE "Sorted Array:"
+    FOR i FROM 0 TO n - 1 DO
+        WRITE arr[i]
+    END FOR
+END
